@@ -1,0 +1,114 @@
+---
+title: "Metode Penelitian Politeknik APP Jakarta"
+subtitle: "Analisis Jumlah Penduduk Indonesia Menurut Kelompok Umur dan Jenis Kelamin Pada Tahun 2021"
+author: "Aji Husaini"
+date: 2023-01-20
+number-sections: true
+format:
+  html: default
+  docx: default
+editor: visual
+---
+
+## Pendahuluan
+
+### Latar belakang
+
+Seperti diketahui bahwa semua perencanaan pembangunan harus ditunjang dengan informasi tentang jumlah penduduk, persebaran dan susunannya menurut berbagai kelompok umur penduduk yang relevan dalam perencanaan tersebut. Data penduduk pada waktu yang lalu dan waktu kini sudah dapat diperoleh dari hasil-hasil survei dan sensus, sedangkan untuk memenuhi kebutuhan data penduduk pada masa yang akan datang perlu dibuat proyeksi penduduk yaitu perkiraan jumlah penduduk dan komposisinya di masa mendatang.
+
+Informasi umur dan jenis kelamin penduduk merupakan informasi dasar yang sangat penting dalam studi demografi. Struktur umur dan jenis kelamin menjadi dasar dalam penghitungan indikator kependudukan dan indikator lainnya. Sebagai contoh, penduduk umur balita dan jumlah penduduk wanita akan digunakan untuk menghitung angka fertilitas.
+
+Disamping itu informasi struktur umur dan jenis kelamin dibutuhkan pemerintah dan swasta dalam menentukan kebijakan publik. Kebutuhan penduduk terhadap suatu pelayanan maupun barang dan jasa bervariasi menurut umur dan jenis kelamin.
+
+### Ruang lingkup
+
+Pada analisis ini, saya mengambil data jumlah penduduk menurut kelompok umur dan jenis kelamin dari BPS. Dalam analisis ini, variabel yang digunakan adalah jumlah penduduk laki-laki dalam satuan 000 jiwa. Dan variabel lainnya adalah jumlah penduduk wanita dalam satuan 000 jiwa.
+
+### Rumusan masalah
+
+Berdasarkan uraian latar belakang diatas, maka terdapat beberapa indikator yang menjadi rumusan masalah dalam penelitian ini, antara lain: 1. Jumlah penduduk di Indonesia lebih banyak kelamin laki-laki atau kelamin perempuan? 2. Pada kelompok umur berapa jumlah penduduk Indonesia terbanyak?
+
+### Tujuan dan manfaat penelitian
+
+Secara umum tujuan analisis ini adalah: 1. Mengumpulkan dan menyajikan data dasar kependudukan.
+
+## Studi pustaka
+
+Peningkatan jumlah penduduk di suatu negara apabila tidak diselesaikan dengan baik dan sistematis akan mengakibatkan dampak-dampak yang buruk seperti terjadinya pencemaran lingkungan, berkurangnya lahan terbuka hijau dikarenakan untuk pembangunan pemukiman penduduk, tingkat pencemaran yang semakin meningkat, dan dampak-dampak lainnya yang akan ditimbulkan dari peningkatan jumlah penduduk. Pertumbuhan ekonomi sebagai salah satu dari proses pembangunan ekonomi menjadi penting, karena pembangunan ekonomi tidak terlepas dari pertumbuhan ekonomi (economic growth), pembangunan ekonomi mendorong pertumbuhan ekonomi dan sebaliknya, pertumbuhan ekonomi itu sendiri dapat memperlancar proses pembangunan (HM, 2013).
+
+Jumlah penduduk di dalam data ini diklasifikasikan berdasarkan jenis kelamin yaitu laki-laki dan perempuan, dan juga dalam kelompok umur dari umur 0 sampai 75+ di Negara Indonesia pada tahun 2021.
+
+## Metode penelitian
+
+### Data
+
+| Kelompok Umur | Penduduk Laki-Laki | Penduduk Perempuan |
+|---------------|--------------------|--------------------|
+| 0-4           | 11280300           | 10765000           |
+| 5-9           | 11249900           | 10775200           |
+| 10-14         | 11392700           | 10723200           |
+| 15-19         | 11445200           | 10755100           |
+| 20-24         | 11588100           | 10989200           |
+| 25-29         | 11434400           | 10947000           |
+| 30-34         | 11155900           | 10818800           |
+| 35-39         | 10633600           | 10412600           |
+| 40-44         | 10109800           | 10009300           |
+| 45-49         | 9191900            | 9163700            |
+| 50-54         | 8050200            | 8061000            |
+| 55-59         | 6740000            | 6791700            |
+| 60-64         | 5280800            | 5337000            |
+| 65-69         | 3860600            | 3968000            |
+| 70-74         | 2345900            | 2546500            |
+| 75+           | 2112000            | 2748100            |
+
+### Metode analisis
+
+Metode yang dipilih adalah regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen. Penelitian ini bermaksud mencari hubungan antara jumlah penduduk Indonesia menurut kelompok umur dan jenis kelamin. Spesifikasi yang dilakukan adalah mengumpulkan data dari BPS..
+
+## Pembahasan
+
+### Pembahasan masalah
+
+| Kelompok Umur | Penduduk Laki-Laki | Penduduk Perempuan |
+|---------------|--------------------|--------------------|
+| 0-4           | 11280300           | 10765000           |
+| 5-9           | 11249900           | 10775200           |
+| 10-14         | 11392700           | 10723200           |
+| 15-19         | 11445200           | 10755100           |
+| 20-24         | 11588100           | 10989200           |
+| 25-29         | 11434400           | 10947000           |
+| 30-34         | 11155900           | 10818800           |
+| 35-39         | 10633600           | 10412600           |
+| 40-44         | 10109800           | 10009300           |
+| 45-49         | 9191900            | 9163700            |
+| 50-54         | 8050200            | 8061000            |
+| 55-59         | 6740000            | 6791700            |
+| 60-64         | 5280800            | 5337000            |
+| 65-69         | 3860600            | 3968000            |
+| 70-74         | 2345900            | 2546500            |
+| 75+           | 2112000            | 2748100            |
+
+### Analisis masalah
+
+Hasil regresinya adalah
+
+```{r}
+library(readxl)
+dat<-read_excel("latihan1.xlsx")
+reg1<-lm(Y~X,data=dat)
+summary(reg1)
+```
+
+Dapat kita terjemahkan secara sederhana yaitu: Y\^ = 6.401e+03 + 9.035e-01X
+
+## Kesimpulan
+
+Dalam analisis ini kita dapat simpulkan jumlah penduduk Indonesia yang berjenis kelamin laki-laki lebih banyak daripada yang berjenis kelamin perempuan. Dan kelompok umur 20-24 lah jumlah penduduk di Indonesia yang terbanyak.
+
+## Referensi
+
+H. Syamsuddin. HM,. (2013) Analisis Pengaruh Faktor Kependudukan Terhadap Pertumbuhan Ekonomi Provinsi Jambi, Tesis Tidak Terpublikasi, Jambi: Universitas Jambi.
+
+Indonesia, S. Proyeksi Penduduk Indonesia Per Provinsi Menurut Kelompok Umur dan Jenis Kelamin 2000-2010. Statistics Indonesia.
+
+Indonesia, S. (2011). Umur dan Jenis Kelamin Penduduk Indonesia Hasil Sensus Penduduk 2010. Statistics Indonesia.
